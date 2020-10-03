@@ -1,0 +1,44 @@
+class person:
+    def __init__(self, n, ssn):
+        self.__name=n
+        self.__SSN=ssn
+    def getName(self):
+        return self.__name
+    def getSSN(self):
+        return self.__SSN
+    def setPerson(self,n,ssn):
+        self.__name=n
+        self.__SSN=ssn
+    def __str__(self):
+        return self.__name+" "+str(self.__SSN)
+class student(person):
+    def __init__(self, n="No", s=0,i=0):
+        person.__init__(self,n,s)
+        self.__ID=i
+    def __str__(self):
+        return person.__str__(self)+' '+str(self.__ID)
+    def setStudent(self, na, ss, i):
+        person.setPerson(self, na, ss)
+        self.__ID=i
+        
+def display(obj):
+    if isinstance(obj, person):
+        print(obj)
+        print(obj.getName())
+    else:
+        print(obj)
+    
+
+    
+s1=student('ali', 1234, 171)
+p1=person("muh",1611)
+display(s1)
+display(p1)
+display("yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa u")
+
+
+#print(s1.getName())
+#print(s1)
+#s1.setStudent('ahmad',4567, 173)
+#print (s1)
+
